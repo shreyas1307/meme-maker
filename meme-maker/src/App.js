@@ -18,10 +18,12 @@ class App extends Component {
       .then(res => res.json())
       .then(data => {
         console.log(data.data);
+        const slicedArray = data.data.memes.slice(0, 20);
+        console.log(slicedArray);
         // const defaultImg = data.data.memes[1].url;
         // console.log(defaultImg);
         this.setState({
-          memesArray: [...data.data.memes]
+          memesArray: [...slicedArray]
           // defaultImg: defaultImg
         });
       });
@@ -29,7 +31,7 @@ class App extends Component {
 
   randomImageGenerator = () => {
     const memesArray = [...this.state.memesArray];
-    const randomNum = Math.floor(Math.random() * Math.floor(100));
+    const randomNum = Math.floor(Math.random() * Math.floor(20));
     const randomImage = memesArray[randomNum].url;
 
     this.setState({

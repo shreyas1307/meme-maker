@@ -8,8 +8,10 @@ const memeDisplay = props => {
     <section
       style={{
         backgroundImage: `url(${props.randomImg})`,
-        width: "50vw",
-        height: "50vh",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        width: "100vw",
+        height: "100vh",
         alignSelf: "center"
       }}
     >
